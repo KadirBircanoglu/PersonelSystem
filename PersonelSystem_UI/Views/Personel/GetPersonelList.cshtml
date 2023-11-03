@@ -1,0 +1,47 @@
+﻿@using PersonelSystem_EL.Entities
+@model List<Personel>
+@{
+    ViewBag.Title = "GetPersonelList";
+
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<br />
+<br />
+<h2>Personel Listesi</h2>
+<br />
+
+@Html.ValidationSummary("", new { @class = "text-danger" })
+
+<table class="table table-hover">
+    <tr>
+        <th>İsim</th>
+        <th>Soyisim</th>
+        <th>EMail</th>
+        <th>Telefon</th>
+        <th>TC Kimlik</th>
+        <th>Cinsiyet</th>
+        <th>Eğitim Durumu</th>
+        <th>İşlem</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Surname</td>
+            <td>@item.Email</td>
+            <td>@item.Phone</td>
+            <td>@item.TCNumber</td>
+            <td>@item.Gender</td>
+            <td>@item.EducationStatus</td>
+            <td>
+                <a href="/Personel/UpdatePersonel/@item.Id" class="btn btn-sm btn-outline-warning">Güncelle</a> 
+                <a href="/Personel/DeletePersonel/@item.Id" class="btn btn-sm btn-danger">Sil</a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="/Personel/AddNewPersonel" class="btn btn-info">Personel Ekle</a>
+
+

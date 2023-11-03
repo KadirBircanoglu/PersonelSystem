@@ -1,0 +1,35 @@
+﻿@using PersonelSystem_EL.Entities
+@model Personel
+@{
+    ViewBag.Title = "AddNewPersonel";
+
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+@Html.ValidationSummary("", new { @class = "text-danger" })
+
+<br />
+<h2>Yeni Personel Ekleme Sayfası</h2>
+<br />
+
+<form class="form-group col-md-12" method="post" ">
+    <input type="text" placeholder="İsim" name="Name" class="form-control" /> <br />
+    <input type="text" placeholder="Soyisim" name="Surname" class="form-control" /> <br />
+    <input type="text" placeholder="Email" name="Email" class="form-control" /> <br />
+    <input type="text" placeholder="Telefon" name="Phone" class="form-control" /> <br />
+    <input type="text" placeholder="TC Kimlik Numarası" name="TCNumber" class="form-control" /> <br />
+
+    <div>
+        <label style="margin-bottom:10px">Cinsiyet Seçiniz</label><br />
+        <input type="radio" class="form-check-input" name="Gender" id="male" value="Erkek" />
+        <label for="male">Erkek</label>
+        <input type="radio" class="form-check-input" name="Gender" id="female" value="Kadın" />
+        <label for="female">Kadın</label>
+    </div>
+    <br />
+
+
+    <input type="text" placeholder="Eğitim Durumu" name="EducationStatus" class="form-control" /> <br />
+    <button class="btn btn-primary">Kaydet</button>
+</form>

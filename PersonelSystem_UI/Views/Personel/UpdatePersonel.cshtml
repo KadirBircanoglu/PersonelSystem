@@ -1,0 +1,41 @@
+﻿@using PersonelSystem_EL
+@model PersonelSystem_EL.Entities.Personel
+@{
+    ViewBag.Title = "UpdatePersonel";
+}
+
+<h2>Personel Güncelleme Sayfası</h2>
+
+@using (Html.BeginForm("UpdatePersonel", "Personel", FormMethod.Post))
+            {
+                <div class="form-group">
+                    @*Seçtiğimiz kişinin bilgileri sayfaya dolu gelsin.*@
+                    @Html.Label("İsim")
+                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                    <br />
+                    @Html.Label("Soyisim")
+                    @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+                    <br />
+                    @Html.Label("EMail")
+                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                    <br />
+                    @Html.Label("Telefon")
+                    @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+                    <br />
+                    @Html.Label("TC Kimlik Numarası")
+                    @Html.TextBoxFor(x => x.TCNumber, new { @class = "form-control" })
+                    <br />
+                    @Html.Label("Cinsiyet Seçiniz")
+                    <br />
+                    @Html.RadioButtonFor(x => x.Gender, "Erkek") Erkek
+                    <br />
+                    @Html.RadioButtonFor(x => x.Gender, "Kadın") Kadın
+                    <br />
+                    <br />
+                    @Html.Label("Eğitim Durumu")
+                    @Html.TextBoxFor(x => x.EducationStatus, new { @class = "form-control" })
+                </div>
+                <br />
+                <button class="btn btn-success">Güncelle</button>
+            }
+
